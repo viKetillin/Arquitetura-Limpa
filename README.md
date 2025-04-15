@@ -16,6 +16,7 @@
 - [Princípios de Design](#princípios-de-design)
 - [SRP: O Princípio da Responsabilidade Única](#srp-o-princípio-da-responsabilidade-única)
 - [OCP: Princípio Aberto-Fechado](#ocp-princípio-aberto-fechado)
+- [LSP: Princípio da Substituição de Liskov](#lsp-principio-da-substituicao-de-Liskov)
 
 ---
 
@@ -211,4 +212,19 @@ class SMSNotificador implements Notificador {
 ```
 
 Isso segue o OCP: o código existente não foi modificado, apenas **estendido** com novos comportamentos.
+
+---
+## Princípio da Substituição de Liskov (LSP)
+
+O Princípio da Substituição de Liskov (LSP) diz que uma subclasse deve poder ser usada no lugar da sua superclasse sem que o funcionamento do programa seja alterado. Ou seja, o comportamento da subclasse deve ser compatível com o da classe pai.
+
+Se uma função ou parte do sistema espera um objeto da classe pai, ela deve continuar funcionando normalmente mesmo que receba uma subclasse. A substituição não pode causar erros ou mudanças inesperadas no comportamento.
+
+Por exemplo, se temos uma classe `Animal` com o método `fazerSom`, então todas as subclasses, como `Cachorro` ou `Gato`, também devem saber fazer som. Se criarmos uma subclasse `Peixe` que não sabe fazer som e causa erro, estamos violando o princípio.
+
+**Resumindo:** subclasses devem manter o comportamento esperado da classe pai. Se uma subclasse não pode ser usada no lugar da superclasse sem quebrar o sistema, o LSP está sendo desrespeitado.
+
+---
+
+## Princípio da Segregação de Interface (ISP)
 
