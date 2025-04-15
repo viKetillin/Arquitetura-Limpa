@@ -214,15 +214,54 @@ class SMSNotificador implements Notificador {
 Isso segue o OCP: o código existente não foi modificado, apenas **estendido** com novos comportamentos.
 
 ---
-## Princípio da Substituição de Liskov (LSP)
+LSP: Princípio da Substituição de Liskov
+O Princípio da Substituição de Liskov (Liskov Substitution Principle) afirma que uma subclasse deve ser substituível por sua superclasse sem alterar o comportamento esperado do sistema. Ou seja, os objetos das subclasses devem poder ser usados no lugar de objetos da classe base sem causar erros ou comportamentos inesperados.
 
-O Princípio da Substituição de Liskov (LSP) diz que uma subclasse deve poder ser usada no lugar da sua superclasse sem que o funcionamento do programa seja alterado. Ou seja, o comportamento da subclasse deve ser compatível com o da classe pai.
+Esse princípio garante que o sistema continue funcionando corretamente mesmo quando subclasses são usadas em vez das classes pai. Violá-lo geralmente significa que há um problema na hierarquia de herança ou que a subclasse está alterando regras importantes da superclasse.
 
-Se uma função ou parte do sistema espera um objeto da classe pai, ela deve continuar funcionando normalmente mesmo que receba uma subclasse. A substituição não pode causar erros ou mudanças inesperadas no comportamento.
+Exemplo clássico:
 
-Por exemplo, se temos uma classe `Animal` com o método `fazerSom`, então todas as subclasses, como `Cachorro` ou `Gato`, também devem saber fazer som. Se criarmos uma subclasse `Peixe` que não sabe fazer som e causa erro, estamos violando o princípio.
+Considere as classes Retângulo e Quadrado.
 
-**Resumindo:** subclasses devem manter o comportamento esperado da classe pai. Se uma subclasse não pode ser usada no lugar da superclasse sem quebrar o sistema, o LSP está sendo desrespeitado.
+class Retangulo {
+  constructor(public largura: number, public altura: number) {}
+
+  setLargura(l: number) {
+    this.largura = l;
+  }
+
+  setAltura(h: number) {
+    this.altura = h;
+  }
+
+  getArea(): number {
+    return this.largura * this.altura;
+  }
+}
+
+class Quadrado extends Retangulo {
+  setLargura(l: number) {
+    this.largura = l;
+    this.altura = l;
+  }
+
+  setAltura(h: number) {
+    this.largura = h;
+    this.altura = h;
+  }
+}
+Ao usar um Quadrado onde se espera um Retângulo, o comportamento pode ser alterado de forma inesperada, pois as operações setLargura e setAltura afetam ambos os lados. Isso viola o LSP, pois o Quadrado não mantém as expectativas de comportamento do Retângulo.
+
+Como aplicar corretamente:
+
+Evite sobrescrever métodos de forma que mudem o comportamento da classe base.
+
+Prefira composição em vez de herança quando as restrições entre as classes são muito diferentes.
+
+Crie abstrações mais genéricas se necessário, garantindo que todas as implementações sigam o mesmo contrato.
+
+Conclusão:
+O LSP é essencial para garantir reutilização segura de código e evitar bugs difíceis de detectar. Ele promove heranças corretas e interfaces consistentes, mantendo a integridade do sistema ao longo do tempo.
 
 ---
 
