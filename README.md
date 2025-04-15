@@ -70,3 +70,37 @@ Os paradigmas de programação não apenas introduzem novas formas de estruturar
 É improvável que surjam novos paradigmas, pois esses três já cobrem todas as formas fundamentais de organização do código. As inovações modernas geralmente combinam ou refinam esses conceitos, mas não introduzem um modelo completamente novo.
 
 ---
+
+Programação Estruturada
+A programação estruturada surgiu como uma alternativa ao código desorganizado e caótico dos primeiros programas de computador, onde o uso excessivo do goto tornava o fluxo de execução difícil de seguir.
+
+Em 1968, Edsger Dijkstra publicou o artigo "Go To Statement Considered Harmful", que marcou uma virada para um estilo de programação mais disciplinado e organizado. Esse modelo foi adotado para tornar o código mais previsível, modular e fácil de entender.
+
+Princípios da Programação Estruturada
+A programação estruturada se baseia em três estruturas de controle fundamentais:
+
+Sequência: as instruções são executadas uma após a outra, na ordem em que aparecem.
+
+Seleção: decisões condicionais permitem que o programa siga caminhos diferentes (ex.: if, switch).
+
+Repetição: permite a execução repetitiva de blocos de código (ex.: for, while).
+
+Com essas estruturas, é possível escrever qualquer programa sem a necessidade de comandos como goto, garantindo um código mais organizado e legível.
+
+Estrutura e Arquitetura
+A programação estruturada é um pilar essencial para a arquitetura limpa, pois fornece uma base sólida para a organização do código. No entanto, apesar de ser um avanço importante, ela não resolve sozinha todos os problemas de software.
+
+A arquitetura limpa vai além, aplicando princípios como:
+
+Separação de responsabilidades
+
+Inversão de dependências
+
+Modularização
+
+Esses princípios permitem que sistemas grandes sejam mantidos e escalados ao longo do tempo com mais facilidade.
+
+Conclusão
+A programação estruturada foi um divisor de águas na engenharia de software, reduzindo a complexidade do código e melhorando sua manutenibilidade.
+
+No entanto, para aplicações modernas, ela deve ser combinada com princípios arquiteturais sólidos, como os da arquitetura limpa, garantindo que o código continue sustentável e flexível conforme o sistema cresce.
