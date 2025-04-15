@@ -6,7 +6,6 @@
 - [Apresentação](#apresentação)
 - [Introdução](#introdução)
 - [O que são Design e Arquitetura?](#o-que-são-design-e-arquitetura)
-- [Conclusão](#conclusão)
 - [Um Conto de Dois Valores](#um-conto-de-dois-valores)
 - [Paradigmas da Programação](#paradigmas-da-programação)
 - [Panorama do Paradigma](#panorama-do-paradigma)
@@ -45,11 +44,7 @@ Arquitetura e design de software não possuem definições rígidas — eles se 
 
 Embora tenham focos diferentes, não há uma divisão absoluta entre eles, pois ambos contribuem para a construção de um software bem estruturado.
 
----
-
-## Conclusão
-
-A organização do código impacta diretamente a produtividade e a evolução do software. Um código limpo facilita a manutenção, reduz erros e melhora a eficiência da equipe.
+**Conclusão**: A organização do código impacta diretamente a produtividade e a evolução do software. Um código limpo facilita a manutenção, reduz erros e melhora a eficiência da equipe.
 
 Em vez de lidar com a degradação do sistema e tentar reorganizá-lo depois, o ideal é adotar boas práticas desde o início, garantindo um desenvolvimento sustentável e de qualidade.
 
