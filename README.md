@@ -1,3 +1,4 @@
+# Resumo: Arquitetura Limpa
 
 ## Índice
 
@@ -12,10 +13,8 @@
 - [Programação Estruturada](#programação-estruturada)
 - [Princípios da Programação Estruturada](#princípios-da-programação-estruturada)
 - [Programação Orientada a Objetos](#programação-orientada-a-objetos)
-- [Estrutura e Arquitetura](#estrutura-e-arquitetura)
-- [Conclusão (Final)](#conclusão-final)
 
-# Resumo: Arquitetura Limpa
+---
 
 ## Prefácio
 
@@ -88,53 +87,38 @@ Os paradigmas de programação não apenas introduzem novas formas de estruturar
 
 ---
 
-Programação Estruturada
-A programação estruturada surgiu como uma alternativa ao código desorganizado e caótico dos primeiros programas de computador, onde o uso excessivo do goto tornava o fluxo de execução difícil de seguir.
+## Programação Estruturada
 
-Em 1968, Edsger Dijkstra publicou o artigo "Go To Statement Considered Harmful", que marcou uma virada para um estilo de programação mais disciplinado e organizado. Esse modelo foi adotado para tornar o código mais previsível, modular e fácil de entender.
+A programação estruturada surgiu como uma alternativa ao código desorganizado e caótico dos primeiros programas de computador, onde o uso excessivo de `goto` tornava o fluxo de execução difícil de seguir.
 
-Princípios da Programação Estruturada
+Em 1968, Edsger Dijkstra publicou um artigo intitulado *"Go To Statement Considered Harmful"*, que foi um marco na mudança para um estilo de programação mais disciplinado e estruturado. Esse modelo foi adotado para tornar o código mais previsível, modular e fácil de entender.
+
+---
+
+## Princípios da Programação Estruturada
+
 A programação estruturada se baseia em três estruturas de controle fundamentais:
 
-Sequência: as instruções são executadas uma após a outra, na ordem em que aparecem.
+- **Sequência**: as instruções são executadas uma após a outra, na ordem em que aparecem.
+- **Seleção**: decisões condicionais permitem que o programa siga caminhos diferentes (ex: `if`, `switch`).
+- **Repetição**: permite a execução repetitiva de blocos de código (ex: `for`, `while`).
 
-Seleção: decisões condicionais permitem que o programa siga caminhos diferentes (ex.: if, switch).
+Com essas estruturas, é possível escrever qualquer programa sem a necessidade de comandos como `goto`, garantindo um código mais organizado e legível.
 
-Repetição: permite a execução repetitiva de blocos de código (ex.: for, while).
+A programação estruturada é um pilar essencial para a arquitetura limpa, pois fornece uma base sólida para a organização do código. No entanto, ela não resolve todos os problemas sozinha. A arquitetura limpa vai além, aplicando princípios como separação de responsabilidades, inversão de dependências e modularização — permitindo que sistemas grandes sejam mantidos e escalados ao longo do tempo.
 
-Com essas estruturas, é possível escrever qualquer programa sem a necessidade de comandos como goto, garantindo um código mais organizado e legível.
-
-Estrutura e Arquitetura
-A programação estruturada é um pilar essencial para a arquitetura limpa, pois fornece uma base sólida para a organização do código. No entanto, apesar de ser um avanço importante, ela não resolve sozinha todos os problemas de software.
-
-A arquitetura limpa vai além, aplicando princípios como:
-
-Separação de responsabilidades
-
-Inversão de dependências
-
-Modularização
-
-Esses princípios permitem que sistemas grandes sejam mantidos e escalados ao longo do tempo com mais facilidade.
-
-Conclusão
-A programação estruturada foi um divisor de águas na engenharia de software, reduzindo a complexidade do código e melhorando sua manutenibilidade.
-
-No entanto, para aplicações modernas, ela deve ser combinada com princípios arquiteturais sólidos, como os da arquitetura limpa, garantindo que o código continue sustentável e flexível conforme o sistema cresce.
+**Conclusão**: a programação estruturada foi um divisor de águas na engenharia de software, reduzindo a complexidade do código e melhorando sua manutenibilidade. No entanto, para aplicações modernas, ela deve ser combinada com princípios arquiteturais sólidos, como os da arquitetura limpa.
 
 ---
 
 ## Programação Orientada a Objetos
 
-A orientação a objetos na Arquitetura Limpa tem como foco principal o **polimorfismo**, e não apenas os conceitos tradicionais como **encapsulamento** e **herança**.
+A orientação a objetos na arquitetura limpa tem como foco principal o **polimorfismo**, e não apenas os conceitos clássicos como **encapsulamento** e **herança**.
 
-O uso de **interfaces** e **abstrações** permite construir sistemas **desacoplados**, garantindo que as regras de negócio não dependam diretamente de detalhes de implementação, como frameworks, banco de dados ou bibliotecas externas.
+O uso de **interfaces e abstrações** permite construir sistemas desacoplados, garantindo que as regras de negócio não dependam diretamente de detalhes de implementação como frameworks, bancos de dados ou bibliotecas externas.
 
-O **Princípio da Inversão de Dependência (DIP)** desempenha um papel fundamental, pois impede que módulos de alto nível dependam de módulos de baixo nível. Em vez disso, **ambos devem depender de abstrações**. Isso possibilita a substituição de implementações sem afetar a lógica central do sistema.
+O **princípio da inversão de dependência (DIP)** desempenha um papel fundamental, pois impede que módulos de alto nível dependam de módulos de baixo nível. Em vez disso, **ambos devem depender de abstrações**. Isso possibilita substituir implementações sem afetar a lógica central do sistema.
 
-A **herança**, embora útil, pode gerar **acoplamento excessivo** e dificultar a manutenção do código. A **composição** e o uso de **interfaces** são alternativas mais flexíveis, pois permitem modificar e estender funcionalidades sem afetar o código existente.
+A **herança**, embora útil, pode gerar acoplamento excessivo e dificultar a manutenção do código. A **composição** e o uso de **interfaces** são alternativas mais flexíveis, pois permitem modificar e estender funcionalidades sem afetar o código existente.
 
-Seguindo esses princípios, é possível criar uma arquitetura **sustentável, testável e resistente a mudanças**, onde a lógica de negócios permanece **independente da infraestrutura técnica**.
-
-
-
+Seguindo esses princípios, é possível criar uma arquitetura sustentável, testável e resistente a mudanças, onde a lógica de negócios permanece independente da infraestrutura técnica.
