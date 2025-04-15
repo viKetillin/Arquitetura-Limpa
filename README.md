@@ -16,7 +16,7 @@
 - [Princípios de Design](#princípios-de-design)
 - [SRP: O Princípio da Responsabilidade Única](#srp-o-princípio-da-responsabilidade-única)
 - [OCP: Princípio Aberto-Fechado](#ocp-princípio-aberto-fechado)
-- [LSP: Princípio da Substituição de Liskov](#lsp-principio-da-substituicao-de-Liskov)
+- [LSP: Princípio da Substituição de Liskov](#lsp-princípio-da-substituição-de-liskov)
 
 ---
 
