@@ -12,6 +12,10 @@
 - [Programação Estruturada](#programação-estruturada)
 - [Princípios da Programação Estruturada](#princípios-da-programação-estruturada)
 - [Programação Orientada a Objetos](#programação-orientada-a-objetos)
+- [Programação Funcional](#programação-funcional)
+- [Princípios de Design](#princípios-de-design)
+- [SRP: O Princípio da Responsabilidade Única](#srp-o-princípio-da-responsabilidade-única)
+- [OCP: Princípio Aberto-Fechado](#ocp-princípio-aberto-fechado)
 
 ---
 
@@ -117,3 +121,94 @@ O **princípio da inversão de dependência (DIP)** desempenha um papel fundamen
 A **herança**, embora útil, pode gerar acoplamento excessivo e dificultar a manutenção do código. A **composição** e o uso de **interfaces** são alternativas mais flexíveis, pois permitem modificar e estender funcionalidades sem afetar o código existente.
 
 Seguindo esses princípios, é possível criar uma arquitetura sustentável, testável e resistente a mudanças, onde a lógica de negócios permanece independente da infraestrutura técnica.
+
+---
+
+## Programação Funcional
+
+A programação funcional (FP) enfatiza a imutabilidade e a ausência de efeitos colaterais, tornando o código mais previsível e fácil de testar. Em contraste com a orientação a objetos, que encapsula estados em objetos, a FP trata funções como cidadãos de primeira classe, permitindo passá-las como argumento e retorná-las de outras funções.
+
+O uso de **funções puras** — aquelas que sempre retornam o mesmo resultado para a mesma entrada e não alteram estados externos — ajuda a evitar dependências ocultas e facilita o paralelismo. Estruturas mutáveis e estados globais devem ser evitados, pois tornam o código difícil de depurar e manter.
+
+Outro conceito importante é a **função de ordem superior**, que permite criar código mais modular e reutilizável, tornando a lógica mais declarativa e menos procedural.
+
+Na arquitetura limpa, os princípios da programação funcional ajudam a manter regras de negócio isoladas da infraestrutura, garantindo que a lógica central do sistema seja previsível e testável.
+
+---
+
+## Princípios de Design
+
+O design de software deve seguir princípios que garantem código limpo, flexível e de fácil manutenção. Os princípios SOLID ajudam a estruturar sistemas modulares e desacoplados:
+
+- **S — Princípio da Responsabilidade Única (SRP)**: uma classe deve ter apenas uma razão para mudar, ou seja, deve ter uma única responsabilidade bem definida.
+- **O — Princípio Aberto-Fechado (OCP)**: classes e módulos devem estar abertos para extensão, mas fechados para modificação, evitando mudanças diretas no código existente ao adicionar novas funcionalidades.
+- **L — Princípio da Substituição de Liskov (LSP)**: subtipos devem poder substituir seus tipos base sem alterar o comportamento esperado, garantindo herança correta e sem efeitos colaterais inesperados.
+- **I — Princípio da Segregação de Interfaces (ISP)**: interfaces devem ser específicas e coesas, evitando que sejam forçadas a implementar métodos que não utilizam.
+- **D — Princípio da Inversão de Dependência (DIP)**: o código deve depender de abstrações e não de implementações concretas, promovendo o desacoplamento entre módulos.
+
+Esses princípios garantem código organizado, facilitando testes e manutenção, e tornam o sistema mais resiliente a mudanças ao longo do tempo.
+
+---
+
+## SRP: O Princípio da Responsabilidade Única
+
+O Princípio da Responsabilidade Única (SRP) diz que um módulo ou classe deve ser responsável por um único ator ou papel. Isso significa que ele deve cuidar apenas de uma coisa específica, sem misturar responsabilidades de diferentes partes do sistema.
+
+**Exemplo:**
+
+Imagine um sistema que tem uma classe para gerenciar usuários e outra para notificações:
+
+- A **classe de usuários** deve ser responsável apenas por lidar com a criação, edição e exclusão de usuários. Ela não deve se preocupar em enviar e-mails ou notificar alguém.
+- A **classe de notificações** deve ser responsável apenas por enviar notificações, como e-mails ou mensagens.
+
+Se a classe de usuários também tivesse que enviar notificações, ela estaria misturando responsabilidades, o que violaria o SRP. Cada classe ou módulo deve ter um único foco, relacionado a um único ator — seja o usuário ou o sistema de notificações — tornando o código mais claro e fácil de modificar.
+
+---
+
+## OCP: Princípio Aberto-Fechado
+
+O Princípio Aberto-Fechado (Open-Closed Principle) estabelece que **as classes devem estar abertas para extensão, mas fechadas para modificação**. Ou seja, devemos ser capazes de adicionar novas funcionalidades ao sistema sem alterar o código existente.
+
+Esse princípio ajuda a evitar efeitos colaterais inesperados ao modificar o comportamento de classes já existentes, promovendo maior estabilidade e manutenibilidade no sistema.
+
+**Como aplicar?**
+
+- Use **interfaces** ou **classes abstratas** para definir comportamentos genéricos.
+- Crie **novas implementações** para adicionar funcionalidades, sem modificar o código base.
+
+**Exemplo:**
+
+Imagine que você tem um sistema de envio de mensagens:
+
+```ts
+interface Notificador {
+  enviar(mensagem: string): void;
+}
+
+class EmailNotificador implements Notificador {
+  enviar(mensagem: string): void {
+    console.log(`Enviando e-mail: ${mensagem}`);
+  }
+}
+
+class Mensageiro {
+  constructor(private notificador: Notificador) {}
+
+  processar(mensagem: string) {
+    this.notificador.enviar(mensagem);
+  }
+}
+```
+
+Se quiser adicionar um **SMSNotificador**, basta criar uma nova classe implementando a interface, sem alterar o `Mensageiro`:
+
+```ts
+class SMSNotificador implements Notificador {
+  enviar(mensagem: string): void {
+    console.log(`Enviando SMS: ${mensagem}`);
+  }
+}
+```
+
+Isso segue o OCP: o código existente não foi modificado, apenas **estendido** com novos comportamentos.
+
