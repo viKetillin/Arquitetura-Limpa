@@ -1,3 +1,20 @@
+
+## Índice
+
+- [Prefácio](#prefácio)
+- [Apresentação](#apresentação)
+- [Introdução](#introdução)
+- [O que são Design e Arquitetura?](#o-que-são-design-e-arquitetura)
+- [Conclusão](#conclusão)
+- [Um Conto de Dois Valores](#um-conto-de-dois-valores)
+- [Paradigmas da Programação](#paradigmas-da-programação)
+- [Panorama do Paradigma](#panorama-do-paradigma)
+- [Programação Estruturada](#programação-estruturada)
+- [Princípios da Programação Estruturada](#princípios-da-programação-estruturada)
+- [Programação Orientada a Objetos](#programação-orientada-a-objetos)
+- [Estrutura e Arquitetura](#estrutura-e-arquitetura)
+- [Conclusão (Final)](#conclusão-final)
+
 # Resumo: Arquitetura Limpa
 
 ## Prefácio
@@ -104,3 +121,20 @@ Conclusão
 A programação estruturada foi um divisor de águas na engenharia de software, reduzindo a complexidade do código e melhorando sua manutenibilidade.
 
 No entanto, para aplicações modernas, ela deve ser combinada com princípios arquiteturais sólidos, como os da arquitetura limpa, garantindo que o código continue sustentável e flexível conforme o sistema cresce.
+
+---
+
+## Programação Orientada a Objetos
+
+A orientação a objetos na Arquitetura Limpa tem como foco principal o **polimorfismo**, e não apenas os conceitos tradicionais como **encapsulamento** e **herança**.
+
+O uso de **interfaces** e **abstrações** permite construir sistemas **desacoplados**, garantindo que as regras de negócio não dependam diretamente de detalhes de implementação, como frameworks, banco de dados ou bibliotecas externas.
+
+O **Princípio da Inversão de Dependência (DIP)** desempenha um papel fundamental, pois impede que módulos de alto nível dependam de módulos de baixo nível. Em vez disso, **ambos devem depender de abstrações**. Isso possibilita a substituição de implementações sem afetar a lógica central do sistema.
+
+A **herança**, embora útil, pode gerar **acoplamento excessivo** e dificultar a manutenção do código. A **composição** e o uso de **interfaces** são alternativas mais flexíveis, pois permitem modificar e estender funcionalidades sem afetar o código existente.
+
+Seguindo esses princípios, é possível criar uma arquitetura **sustentável, testável e resistente a mudanças**, onde a lógica de negócios permanece **independente da infraestrutura técnica**.
+
+
+
