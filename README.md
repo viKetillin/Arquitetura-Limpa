@@ -17,6 +17,7 @@
 - [SRP: O Princípio da Responsabilidade Única](#srp-o-princípio-da-responsabilidade-única)
 - [OCP: Princípio Aberto-Fechado](#ocp-princípio-aberto-fechado)
 - [LSP: Princípio da Substituição de Liskov](#lsp-princípio-da-substituição-de-liskov)
+- [ISP: Princípio da Segregação de Interfaces](#isp-princípio-da-segregação-de-interface)
 
 ---
 
@@ -214,7 +215,7 @@ class SMSNotificador implements Notificador {
 Isso segue o OCP: o código existente não foi modificado, apenas **estendido** com novos comportamentos.
 
 ---
-LSP: Princípio da Substituição de Liskov
+## LSP: Princípio da Substituição de Liskov
 O Princípio da Substituição de Liskov (Liskov Substitution Principle) afirma que uma subclasse deve ser substituível por sua superclasse sem alterar o comportamento esperado do sistema. Ou seja, os objetos das subclasses devem poder ser usados no lugar de objetos da classe base sem causar erros ou comportamentos inesperados.
 
 Esse princípio garante que o sistema continue funcionando corretamente mesmo quando subclasses são usadas em vez das classes pai. Violá-lo geralmente significa que há um problema na hierarquia de herança ou que a subclasse está alterando regras importantes da superclasse.
@@ -265,5 +266,14 @@ O LSP é essencial para garantir reutilização segura de código e evitar bugs 
 
 ---
 
-## Princípio da Segregação de Interface (ISP)
+## ISP: Princípio da Segregação de Interfaces
+
+O Princípio da Segregação de Interfaces afirma que **nenhuma classe deve ser forçada a depender de métodos que não utiliza**. Em outras palavras, uma classe não deve ser obrigada a implementar interfaces extensas e genéricas que a forcem a lidar com responsabilidades que não lhe dizem respeito.
+
+Quando uma classe depende de outra que possui muitos métodos irrelevantes para seu contexto, isso pode gerar **acoplamento desnecessário**, tornando o sistema mais frágil. Pequenas alterações em uma interface podem afetar várias classes, mesmo aquelas que não utilizam os métodos alterados, aumentando o risco de **erros inesperados**.
+
+Ao aplicar o ISP corretamente, quebramos interfaces grandes em **interfaces menores e mais específicas**, promovendo um código mais coeso, testável e fácil de manter. Dessa forma, cada classe depende apenas do que realmente precisa, reduzindo o impacto de mudanças e melhorando a modularidade do sistema.
+
+---
+
 
