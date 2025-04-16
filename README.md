@@ -17,7 +17,7 @@
 - [SRP: O Princípio da Responsabilidade Única](#srp-o-princípio-da-responsabilidade-única)
 - [OCP: Princípio Aberto-Fechado](#ocp-princípio-aberto-fechado)
 - [LSP: Princípio da Substituição de Liskov](#lsp-princípio-da-substituição-de-liskov)
-- [ISP: Princípio da Segregação de Interfaces](#isp-princípio-da-segregação-de-interface)
+- [ISP: Princípio da Segregação de Interfaces](#isp-princípio-da-segregação-de-interfaces)
 
 ---
 
