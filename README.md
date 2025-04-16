@@ -18,6 +18,7 @@
 - [OCP: Princípio Aberto-Fechado](#ocp-princípio-aberto-fechado)
 - [LSP: Princípio da Substituição de Liskov](#lsp-princípio-da-substituição-de-liskov)
 - [ISP: Princípio da Segregação de Interfaces](#isp-princípio-da-segregação-de-interfaces)
+- [DIP: Princípio da Inversão de Dependência](#dip-princípio-da-inversão-de-dependência)
 
 ---
 
@@ -275,5 +276,52 @@ Quando uma classe depende de outra que possui muitos métodos irrelevantes para 
 Ao aplicar o ISP corretamente, quebramos interfaces grandes em **interfaces menores e mais específicas**, promovendo um código mais coeso, testável e fácil de manter. Dessa forma, cada classe depende apenas do que realmente precisa, reduzindo o impacto de mudanças e melhorando a modularidade do sistema.
 
 ---
+
+---
+
+## DIP: Princípio da Inversão de Dependência
+
+O Princípio da Inversão de Dependência afirma que **módulos de alto nível (regras de negócio)** não devem depender de **módulos de baixo nível (detalhes de implementação)**. Ambos devem depender de **abstrações** (interfaces, por exemplo).
+
+### Mas o que isso significa na prática?
+
+Imagine que você está desenvolvendo um aplicativo de envio de mensagens. Sua regra de negócio diz que “ao acontecer determinado evento, deve ser enviado um aviso ao usuário”.
+
+Sem seguir o DIP, você poderia escrever algo assim:
+
+```ts
+class Notificador {
+  enviarEmail(usuario: Usuario) {
+    // lógica para enviar e-mail
+  }
+}
+```
+
+Nesse caso, a lógica depende diretamente de um serviço de e-mail. Se um dia quiser enviar por SMS ou WhatsApp, terá que modificar o código da regra — o que quebra o princípio de separação de responsabilidades e aumenta o risco de erros.
+
+Aplicando o DIP:
+
+```ts
+interface INotificador {
+  notificar(usuario: Usuario): void;
+}
+
+class NotificadorEmail implements INotificador {
+  notificar(usuario: Usuario) {
+    // envia por e-mail
+  }
+}
+
+class ServicoDeAviso {
+  constructor(private notificador: INotificador) {}
+
+  executar(usuario: Usuario) {
+    this.notificador.notificar(usuario);
+  }
+}
+```
+Com isso, o ServicoDeAviso não sabe como a notificação é enviada — ele apenas sabe que precisa chamar o método notificar. Isso torna o sistema mais flexível e desacoplado.
+
+Na prática, não é possível evitar totalmente a dependência de detalhes, em algum ponto do sistema, será necessário usar uma implementação concreta (por exemplo, criar uma instância de NotificadorEmail). No entanto, a ideia é concentrar esses detalhes nas bordas da aplicação, como em uma camada de infraestrutura. Assim, a parte central do sistema continua limpa, estável e fácil de testar ou modificar.
 
 
