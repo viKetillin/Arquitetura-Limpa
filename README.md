@@ -19,6 +19,7 @@
 - [LSP: Princípio da Substituição de Liskov](#lsp-princípio-da-substituição-de-liskov)
 - [ISP: Princípio da Segregação de Interfaces](#isp-princípio-da-segregação-de-interfaces)
 - [DIP: Princípio da Inversão de Dependência](#dip-princípio-da-inversão-de-dependência)
+- [Princípios dos componentes](#princípios-dos-componentes)
 
 ---
 
@@ -323,5 +324,11 @@ class ServicoDeAviso {
 Com isso, o ServicoDeAviso não sabe como a notificação é enviada — ele apenas sabe que precisa chamar o método notificar. Isso torna o sistema mais flexível e desacoplado.
 
 Na prática, não é possível evitar totalmente a dependência de detalhes, em algum ponto do sistema, será necessário usar uma implementação concreta (por exemplo, criar uma instância de NotificadorEmail). No entanto, a ideia é concentrar esses detalhes nas bordas da aplicação, como em uma camada de infraestrutura. Assim, a parte central do sistema continua limpa, estável e fácil de testar ou modificar.
+
+---
+
+## Princípios dos componentes
+
+Os princípios SOLID ajudam a organizar bem classes e funções em sistemas menores. Porém, em sistemas maiores, é necessário ir além e dividir o software em componentes — grupos de classes que trabalham juntas em uma funcionalidade específica. Essa divisão torna o sistema mais modular, reutilizável, fácil de manter e escalável. Sistemas grandes devem ser construídos a partir de componentes menores e bem definidos.
 
 
