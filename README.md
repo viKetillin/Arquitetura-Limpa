@@ -20,6 +20,7 @@
 - [ISP: Princípio da Segregação de Interfaces](#isp-princípio-da-segregação-de-interfaces)
 - [DIP: Princípio da Inversão de Dependência](#dip-princípio-da-inversão-de-dependência)
 - [Princípios dos componentes](#princípios-dos-componentes)
+- [Componentes](#componentes)
 
 ---
 
@@ -331,4 +332,13 @@ Na prática, não é possível evitar totalmente a dependência de detalhes, em 
 
 Os princípios SOLID ajudam a organizar bem classes e funções em sistemas menores. Porém, em sistemas maiores, é necessário ir além e dividir o software em componentes — grupos de classes que trabalham juntas em uma funcionalidade específica. Essa divisão torna o sistema mais modular, reutilizável, fácil de manter e escalável. Sistemas grandes devem ser construídos a partir de componentes menores e bem definidos.
 
+---
+
+## Componentes 
+
+Componentes são unidades de implantação compostas por várias classes e recursos que são construídos, testados e implantados juntos. São blocos de código independentes, responsáveis por funcionalidades específicas dentro de um sistema.
+
+No início da computação, era necessário conhecer com precisão o tamanho dos programas, pois a memória não podia ser alocada dinamicamente. Com o avanço da tecnologia, surgiram técnicas como relocação e memória virtual, permitindo a execução de programas maiores. No entanto, isso também trouxe desafios relacionados à performance e organização.
+
+Dividir um sistema em componentes bem definidos permite melhor organização, reutilização de código, facilidade de manutenção e escalabilidade.
 
