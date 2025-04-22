@@ -21,6 +21,8 @@
 - [DIP: Princípio da Inversão de Dependência](#dip-princípio-da-inversão-de-dependência)
 - [Princípios dos componentes](#princípios-dos-componentes)
 - [Componentes](#componentes)
+- [Coesão de componentes](#coesão-de-componentes)
+- [Acoplamento de componentes](#acoplamento-de-componentes)
 
 ---
 
@@ -342,3 +344,20 @@ No início da computação, era necessário conhecer com precisão o tamanho dos
 
 Dividir um sistema em componentes bem definidos permite melhor organização, reutilização de código, facilidade de manutenção e escalabilidade.
 
+---
+
+## Coesão de componentes
+
+Os princípios de coesão de componentes ajudam a definir onde cada classe deve estar e como organizar os componentes de forma mais lógica e sustentável ao longo do tempo.
+
+REP (Release Reuse Equivalency Principle): funcionalidades devem ser agrupadas de forma que façam sentido serem versionadas e liberadas juntas. Isso evita um monte de coisa solta e incompatível em um único componente.
+
+CCP (Common Closure Principle): apenas o que realmente muda junto deve estar junto. Se partes do código não forem reutilizadas juntas, melhor separá-las em componentes diferentes para evitar dependências desnecessárias.
+
+CRP (Common Reuse Principle): quanto menos acoplamento, melhor. Devemos evitar criar vínculos entre componentes que não precisam estar conectados.
+
+Na prática, não dá pra seguir os três princípios ao mesmo tempo o tempo todo. Às vezes, ao tentar agrupar por reutilização, você quebra a lógica de liberação em conjunto, e vice-versa. O ideal é ir ajustando conforme o projeto evolui, decidindo o que é mais importante em cada momento: facilidade de manutenção, reutilização ou independência entre componentes.
+
+---
+
+## Acoplamento de componentes
