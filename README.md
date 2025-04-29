@@ -364,23 +364,25 @@ Na prática, não dá pra seguir os três princípios ao mesmo tempo o tempo tod
 
 O princípio das dependências acíclicas diz que não se deve permitir ciclos no grafo de dependência dos componentes. Em projetos grandes, quando vários desenvolvedores mexem no mesmo código, coisas que antes funcionavam podem parar de funcionar. Antigamente, para tentar evitar esse problema, usava-se o build semanal, onde cada um trabalhava isolado e, na sexta-feira, tudo era juntado. Porém, em projetos maiores isso se torna inviável. A solução encontrada foi dividir o sistema em componentes que pudessem ter suas próprias versões liberadas independentemente. Assim, cada equipe decide se quer usar a nova versão ou continuar na anterior, sem depender do restante do projeto para seguir com seu trabalho. Para que isso funcione, é necessário gerenciar a estrutura de dependências entre os componentes, e o ideal é que essa estrutura seja um grafo acíclico direcionado. Com isso, fica fácil acompanhar o que mudou e organizar as atualizações na ordem correta, sem travar o trabalho das outras equipes.
 
-O Efeito dos Ciclos e Como Quebrá-los
+### O Efeito dos Ciclos e Como Quebrá-los
 Quando ocorrem ciclos entre componentes, os desenvolvedores precisam atualizar tudo ao mesmo tempo, porque qualquer alteração em um componente afeta imediatamente os outros, o que elimina a autonomia e a flexibilidade. Para quebrar esses ciclos existem dois caminhos: o primeiro é aplicar o Princípio da Inversão de Dependência (DIP), onde as dependências apontam para abstrações; o segundo é criar um componente intermediário no qual os outros componentes passam a depender. O problema dessa segunda alternativa é que ela deixa a estrutura volátil, pois à medida que o sistema cresce, as dependências podem se concentrar nesse componente, aumentando a fragilidade do projeto.
 
-Crescimento e Planejamento da Estrutura
+### Crescimento e Planejamento da Estrutura
 É importante entender que não dá para planejar toda a estrutura de componentes de um sistema desde o início. Mesmo que tentássemos, ao final acabaríamos criando um monte de dependências desnecessárias. Por isso, a arquitetura deve ser planejada e organizada conforme o sistema for crescendo e as necessidades forem surgindo.
 
-O Princípio das Dependências Estáveis (SDP)
+### O Princípio das Dependências Estáveis (SDP)
 Esse princípio determina que devemos tentar manter os componentes mais difíceis de mudar separados dos mais voláteis. Um componente é considerado estável quando outros componentes dependem dele. Isso acontece porque, se ele mudar, será necessário adaptar todos que dependem dele, o que gera um custo alto. Para medir a estabilidade de um componente, conta-se o número de dependências que entram e o número que saem. O SDP (Stable Dependencies Principle) diz que o número de dependências que entram deve ser maior do que o número de dependências que saem. Porém, nem todos os componentes devem ser estáveis. Para que um projeto fosse totalmente estável, ele precisaria ser imutável, o que não faz sentido. Por isso, uma boa convenção é organizar os componentes mais instáveis no topo do diagrama de dependências. Assim, qualquer dependência que apontar para cima estará violando o SDP. E, para corrigir, usa-se o DIP.
 
-O Princípio das Abstrações Estáveis (SAP)
+### O Princípio das Abstrações Estáveis (SAP)
 Em linguagens estaticamente tipadas, às vezes é necessário criar componentes só de interfaces ou classes abstratas para manter o sistema desacoplado. Isso leva ao princípio das abstrações estáveis, que diz que um componente deve ser tão abstrato quanto estável. As políticas de alto nível devem ser colocadas nos componentes estáveis, para evitar que fiquem voláteis. Mas, para que esses componentes estáveis não se tornem rígidos e inflexíveis, aplica-se o princípio do aberto-fechado (OCP), criando classes abstratas que podem ser estendidas sem precisar serem modificadas diretamente.
 
-Combinando SDP e SAP
+### Combinando SDP e SAP
 Combinando o SAP (Stable Abstractions Principle) e o SDP, forma-se um princípio aplicável a componentes, onde as dependências devem apontar na direção da estabilidade e da abstração. Assim, um componente pode ser parcialmente abstrato e parcialmente estável, mantendo um bom equilíbrio no projeto. Para organizar isso visualmente, costuma-se usar um gráfico de estabilidade versus abstração, onde os componentes são posicionados conforme seu nível de estabilidade e abstração.
 
-Zonas do Gráfico de Estabilidade e Abstração
+### Zonas do Gráfico de Estabilidade e Abstração
 Nesse gráfico, existem três regiões principais: a zona da dor, a zona da inutilidade e a sequência principal. A zona da dor é onde ficam os componentes concretos e muito estáveis, como bancos de dados. Esses componentes são perigosos porque qualquer mudança neles afeta o sistema inteiro. Por outro lado, os componentes voláteis, que não mudam muito, não causam problemas nessa zona. Na zona da inutilidade ficam os componentes muito abstratos e que não têm dependentes, geralmente restos de código ou interfaces não implementadas, que não servem para nada. A sequência principal é a linha ideal entre estabilidade e abstração, onde os componentes bem projetados devem se posicionar, equilibrando flexibilidade e segurança. Não é possível manter tudo sempre nessa linha, mas o importante é evitar que os componentes fiquem muito distantes dela. Qualquer componente que esteja muito afastado da sequência principal precisa ser reavaliado e possivelmente reestruturado.
 
-Conclusão
+### Conclusão
 A conclusão é que essas métricas e princípios ajudam a manter o projeto desacoplado, flexível, sustentável e fácil de manter conforme cresce.
+
+---
