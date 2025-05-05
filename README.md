@@ -23,7 +23,7 @@
 - [Componentes](#componentes)
 - [Coesão de componentes](#coesão-de-componentes)
 - [Acoplamento de componentes](#acoplamento-de-componentes)
-
+- [O que é arquitetura?](#o-que-é-arquitetura) 
 ---
 
 ## Prefácio
@@ -386,3 +386,17 @@ Nesse gráfico, existem três regiões principais: a zona da dor, a zona da inut
 A conclusão é que essas métricas e princípios ajudam a manter o projeto desacoplado, flexível, sustentável e fácil de manter conforme cresce.
 
 ---
+
+## O que é arquitetura? 
+
+A principal função da arquitetura de software é reduzir o custo da vida útil do sistema. O objetivo de um arquiteto não é maximizar a produtividade do programador no curto prazo, mas garantir que o software continue fácil de manter e evoluir ao longo do tempo. Um arquiteto deve continuar programando para manter contato com os desafios reais do código e, assim, tomar decisões melhores. É responsabilidade dele decidir as tecnologias utilizadas com base na performance e nas regras de negócio, mesmo que alguém tenha decidido diferente antes, mantendo o sistema flexível e preparado para mudanças futuras.
+
+A arquitetura deve ser planejada desde o início do projeto. Em equipes pequenas, pode ser uma estrutura mais leve, mas ainda assim precisa existir. Em equipes maiores, deve-se estruturar bem os componentes e responsabilidades de cada parte do sistema para que o desenvolvimento siga um padrão organizado. Além disso, é importante que a arquitetura facilite o processo de implantação, evitando dependências desnecessárias que dificultem a instalação, atualização ou manutenção.
+
+Durante a operação do sistema, uma boa arquitetura evita soluções paliativas, como adicionar hardware desnecessário para compensar problemas de software, pois o foco deve ser administrar bem os recursos, garantindo eficiência. Na fase de manutenção, que é a etapa mais cara da vida de um software, uma boa arquitetura reduz os custos e a dificuldade para adicionar novas funcionalidades ou corrigir falhas, tornando o processo mais seguro e rápido.
+
+Outro ponto fundamental é manter as opções de tecnologia sempre abertas. O sistema não deve ficar preso a frameworks, bancos de dados ou dispositivos específicos sem necessidade. Isso permite que, caso surjam novas soluções melhores, elas possam ser adotadas sem grandes impactos. Por fim, a arquitetura deve garantir a independência de dispositivo, ou seja, o software não pode depender de hardware ou sistemas operacionais específicos e precisa ser fácil de adaptar para diferentes plataformas e ambientes.
+
+Em resumo, arquitetura é sobre manter o sistema saudável e flexível durante toda a sua vida útil, protegendo a regra de negócio e facilitando mudanças, sem se apegar a tecnologias ou soluções passageiras.
+
+```
