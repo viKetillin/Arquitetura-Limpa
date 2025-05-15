@@ -23,7 +23,8 @@
 - [Componentes](#componentes)
 - [Coesão de componentes](#coesão-de-componentes)
 - [Acoplamento de componentes](#acoplamento-de-componentes)
-- [O que é arquitetura?](#o-que-é-arquitetura) 
+- [O que é arquitetura?](#o-que-é-arquitetura)
+- [Independência](#independência) 
 ---
 
 ## Prefácio
@@ -399,4 +400,20 @@ Outro ponto fundamental é manter as opções de tecnologia sempre abertas. O si
 
 Em resumo, arquitetura é sobre manter o sistema saudável e flexível durante toda a sua vida útil, protegendo a regra de negócio e facilitando mudanças, sem se apegar a tecnologias ou soluções passageiras.
 
-```
+---
+
+## Independência
+
+Uma boa arquitetura deve ser capaz de suportar os casos de uso do sistema, facilitar a manutenção, permitir que o desenvolvimento aconteça de forma independente entre as equipes e possibilitar uma implantação rápida e eficiente. Os casos de uso precisam ser claros e visíveis na estrutura do sistema, com nomes e organizações que deixem evidente o que o sistema faz. Por exemplo, em um sistema de pedidos, deve ficar claro quais são os casos de adicionar ou excluir um pedido.
+
+A operação do sistema deve acontecer de forma eficiente, garantindo desempenho, confiabilidade e facilidade de operação. No desenvolvimento, é importante que diferentes equipes consigam trabalhar sem que uma interfira no trabalho da outra, o que só é possível se os componentes do sistema estiverem bem separados. Isso também se reflete na implantação, já que, com o desacoplamento bem feito, é mais fácil adicionar novos casos de uso e publicar atualizações sem comprometer o restante do sistema.
+
+Como na prática não é possível prever tudo, a arquitetura deve manter o maior número de opções abertas pelo máximo de tempo possível. Para isso, é essencial aplicar princípios como o da responsabilidade única e o do fechamento comum, que ajudam a separar elementos que mudam por motivos diferentes e agrupar aqueles que mudam pelos mesmos motivos.
+
+O desacoplamento dos casos de uso consiste em separar a interface de usuário e as regras de negócio de cada caso de uso, mantendo-os organizados verticalmente no sistema. Assim, novos casos podem ser adicionados sem impactar os antigos. Isso também permite que banco de dados e interface sejam agrupados conforme os casos de uso que atendem.
+
+Existem diferentes formas de desacoplar componentes: no nível de código-fonte, controlando as dependências para evitar recompilar tudo; no nível binário, controlando dependências entre bibliotecas ou DLLs para evitar reimplantação desnecessária; e no nível de serviço, controlando dependências até o ponto em que cada unidade de execução funcione de forma independente, como em serviços ou microserviços. O melhor modo de desacoplamento é aquele que oferece o melhor custo-benefício no momento, e a arquitetura deve permitir mudar isso conforme o projeto evolui.
+
+Por fim, é importante evitar unificar elementos que não sejam realmente iguais. Se duas funcionalidades ou telas forem apenas parecidas, mas mudarem por razões diferentes, elas devem permanecer separadas para evitar problemas futuros.
+
+---
