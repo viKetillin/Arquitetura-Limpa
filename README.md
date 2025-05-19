@@ -25,7 +25,7 @@
 - [Acoplamento de componentes](#acoplamento-de-componentes)
 - [O que é arquitetura?](#o-que-é-arquitetura)
 - [Independência](#independência)
-- [Fronteiras: Estabelecendo Limite](#fronteiras:-estabelecendo-limite)
+- [Fronteiras: Estabelecendo Limite](#fronteiras-estabelecendo-limite)
 ---
 
 ## Prefácio
