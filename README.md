@@ -24,7 +24,8 @@
 - [Coesão de componentes](#coesão-de-componentes)
 - [Acoplamento de componentes](#acoplamento-de-componentes)
 - [O que é arquitetura?](#o-que-é-arquitetura)
-- [Independência](#independência) 
+- [Independência](#independência)
+- [Fronteiras: Estabelecendo Limite](#fronteiras:-estabelecendo-limite)
 ---
 
 ## Prefácio
@@ -417,3 +418,15 @@ Existem diferentes formas de desacoplar componentes: no nível de código-fonte,
 Por fim, é importante evitar unificar elementos que não sejam realmente iguais. Se duas funcionalidades ou telas forem apenas parecidas, mas mudarem por razões diferentes, elas devem permanecer separadas para evitar problemas futuros.
 
 ---
+
+## Fronteiras: Estabelecendo Limite
+
+A arquitetura de software serve para manter o sistema desacoplado e proteger as regras de negócio. O principal objetivo da arquitetura é atender corretamente ao domínio, e todas as decisões técnicas, como banco de dados, frameworks e serviços externos, devem ser adiadas até que sejam realmente necessárias.
+
+Para isso, o sistema precisa aplicar o princípio da Inversão de Dependência, onde os detalhes técnicos devem depender das regras de negócio, e não o contrário. Assim, é possível trocar tecnologias sem precisar alterar a lógica principal do sistema.
+
+Deve-se organizar o projeto respeitando o Princípio da Responsabilidade Única (SRP), que afirma que cada módulo ou componente deve ter um único motivo para mudar. Isso significa que o que muda pelos mesmos motivos fica junto, e o que muda por motivos diferentes fica separado.
+
+Além disso, é importante utilizar Abstrações Estáveis, criando interfaces que protegem as regras de negócio das mudanças externas. Assim, qualquer tecnologia externa, como banco de dados ou APIs, se conecta ao sistema por meio dessas interfaces.
+
+Para manter o sistema flexível e preparado para mudanças, é fundamental desacoplar as camadas, tratando detalhes externos como plugins, que se comunicam com o sistema via interfaces. Esse conceito é conhecido como Componentização, onde o sistema é dividido em partes independentes.
